@@ -21,4 +21,10 @@ for i, j in friendship_pairs:
     friendships[i].append(j) # Add j as a friend of user i
     friendships[j].append(i)
 
-print(friendships)
+def jumlah_dari_teman(user):
+    user_id = user["id"]
+    friends_id = friendships[user_id]
+    return len(friends_id)
+
+total_terhubung = sum(jumlah_dari_teman(user) for user in users)
+print(total_terhubung)
